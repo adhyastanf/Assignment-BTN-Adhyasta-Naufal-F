@@ -10,7 +10,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Create Task",
+  title: 'Create Task',
 };
 
 export default function NewTaskPage() {

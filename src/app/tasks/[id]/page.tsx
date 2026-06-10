@@ -14,18 +14,22 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Suspense } from 'react';
 import DetailSkeleton from '@/components/ui/LoadingState/DetailSkeleton';
 import { Metadata } from 'next';
+import { Task } from '@/types/task';
 
-export async function generateMetadata({
-  params,
-}: TaskDetailPageProps): Promise<Metadata> {
+async function getTaskById(id: string) {
+  const data = await fetchTaskById(id);
+  return data;
+}
+
+export async function generateMetadata({ params }: TaskDetailPageProps): Promise<Metadata> {
   const { id } = await params;
 
-  const task = await fetchTaskById(id);
+  const task: Task = await getTaskById(id);
 
-  if (!task) {
+  if (!task?.id) {
     return {
-      title: "Task Not Found",
-      description: "The requested task could not be found.",
+      title: 'Task Not Found',
+      description: 'The requested task could not be found.',
     };
   }
 
@@ -39,11 +43,9 @@ export default async function TaskDetailPage({ params }: TaskDetailPageProps) {
   const { id } = await params;
 
   return (
-    <main className='mx-auto max-w-4xl py-8'>
-      <Suspense fallback={<DetailSkeleton />}>
-        <TaskDetailContent id={id} />
-      </Suspense>
-    </main>
+    <Suspense fallback={<DetailSkeleton />}>
+      <TaskDetailContent id={id} />
+    </Suspense>
   );
 }
 
@@ -71,8 +73,9 @@ async function TaskDetailContent({ id }: TaskDetailContentProps) {
       value: task.dueDate,
     },
   ];
+
   return (
-    <Card>
+    <Card className='mx-auto max-w-4xl py-8'>
       <CardHeader className='space-y-6'>
         <Button variant='ghost' size='sm' asChild className='-ml-3 w-fit'>
           <Link href='/tasks'>
@@ -144,4 +147,4 @@ type DetailCardProps = {
 
 type DetailCardListProps = {
   items: DetailCardProps[];
-}
+};
