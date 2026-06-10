@@ -1,6 +1,9 @@
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
-
+const API_URL =
+  process.env.NODE_ENV === 'production'
+    ? `https://${process.env.VERCEL_URL}`
+    : process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+    
 export async function fetchTasks() {
   const res = await fetch(`${API_URL}/api/tasks`);
 
