@@ -1,5 +1,7 @@
 # Task Management Dashboard - Adhyasta Naufal Faadhilah
 
+[Live Demo](https://assignment-btn-adhyastanf.vercel.app)
+
 Aplikasi Task Management Dashboard yang dibangun menggunakan Next.js App Router, TypeScript, React Hook Form, Zod, Tailwind CSS, dan shadcn/ui.
 
 Aplikasi ini memungkinkan pengguna untuk melihat daftar task, melakukan pencarian, filtering, sorting, melihat detail task, serta menambahkan task baru melalui form yang telah dilengkapi validasi.
