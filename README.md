@@ -1,4 +1,4 @@
-# Task Management Dashboard
+# Task Management Dashboard - Adhyasta Naufal Faadhilah
 
 Aplikasi Task Management Dashboard yang dibangun menggunakan Next.js App Router, TypeScript, React Hook Form, Zod, Tailwind CSS, dan shadcn/ui.
 
