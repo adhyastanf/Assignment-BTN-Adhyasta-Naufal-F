@@ -1,4 +1,4 @@
-# Task Management Dashboard - Adhyasta Naufal Faadhilah NICE TRY GAGAL CUY
+# Task Management Dashboard - Adhyasta Naufal Faadhilah
 
 [Live Demo](https://assignment-btn-adhyastanf.vercel.app)
 
