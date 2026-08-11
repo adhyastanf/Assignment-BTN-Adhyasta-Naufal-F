@@ -36,7 +36,7 @@ export default async function TasksPage({ searchParams }: TasksPageProps) {
     <main>
       <header className='pb-4 flex items-center justify-between'>
         <div>
-          <h1 className='text-3xl font-bold'>Task Management Dashboard NICE TRY GAGAL HEHEHE</h1>
+          <h1 className='text-3xl font-bold'>Task Management Dashboard</h1>
         </div>
 
         <Button asChild>
